@@ -5,10 +5,10 @@
     "sdk" : "org.gnome.Sdk",
     "command" : "bmi",
     "finish-args" : [
-        "--share=ipc",
+        "--socket=wayland",
         "--socket=fallback-x11",
         "--device=dri",
-        "--socket=wayland"
+        "--share=ipc"
     ],
     "cleanup" : [
         "/include",
@@ -23,6 +23,25 @@
     ],
     "modules" : [
         {
+            "name": "blueprint-compiler",
+            "buildsystem": "meson",
+            "cleanup": [
+                "*"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler",
+                    "tag": "v0.18.0",
+                    "commit": "07c9c9df9cd1b6b4454ecba21ee58211e9144a4b",
+                    "x-checker-data": {
+                        "type": "git",
+                        "tag-pattern": "^v([\d.]+)$"
+                    }
+                }
+            ]
+        },
+        {
             "name" : "bmi",
             "builddir" : true,
             "buildsystem" : "meson",
@@ -30,7 +49,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/PhilippKosarev/bmi",
-                    "tag" : "v3.0"
+                    "tag" : "v4.0"
                 }
             ]
         }
