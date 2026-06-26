@@ -1,36 +1,25 @@
 {
-    "id" : "io.github.philippkosarev.bmi",
-    "runtime" : "org.gnome.Platform",
-    "runtime-version" : "49",
-    "sdk" : "org.gnome.Sdk",
-    "command" : "bmi",
-    "finish-args" : [
+    "id": "io.github.philippkosarev.bmi",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "50",
+    "sdk": "org.gnome.Sdk",
+    "command": "bmi",
+    "finish-args": [
         "--socket=wayland",
         "--socket=fallback-x11",
         "--device=dri",
         "--share=ipc"
     ],
-    "cleanup" : [
-        "/include",
-        "/lib/pkgconfig",
-        "/man",
-        "/share/doc",
-        "/share/gtk-doc",
-        "/share/man",
-        "/share/pkgconfig",
-        "*.la",
-        "*.a"
-    ],
-    "modules" : [
+    "modules": [
         {
-            "name" : "bmi",
-            "builddir" : true,
-            "buildsystem" : "meson",
-            "sources" : [
+            "name": "bmi",
+            "buildsystem": "meson",
+            "sources": [
                 {
-                    "type" : "git",
-                    "url" : "https://github.com/PhilippKosarev/bmi",
-                    "tag" : "v4.1"
+                    "type": "git",
+                    "url": "https://github.com/PhilippKosarev/bmi",
+                    "tag": "v4.1",
+                    "commit": "a66dc81f7e9f7e79e8c23efc580a36d9c8818c30"
                 }
             ]
         }
