@@ -30,3 +30,4 @@ modules:
   - type: git
     url: https://github.com/philippkosarev/bmi
     tag: v5.0
+    commit: 182858ee7168e246792aaa633bc7489567cb45a0
